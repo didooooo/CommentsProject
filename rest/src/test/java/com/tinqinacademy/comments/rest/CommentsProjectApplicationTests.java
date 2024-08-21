@@ -1,6 +1,6 @@
 package com.tinqinacademy.comments.rest;
 
-import com.tinqinacademy.comments.rest.controller.RestApiPaths;
+import com.tinqinacademy.comments.api.mappings.RestApiPaths;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

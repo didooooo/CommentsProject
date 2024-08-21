@@ -1,11 +1,10 @@
 package com.tinqinacademy.comments.rest.controller;
 
+import com.tinqinacademy.comments.api.mappings.RestApiPaths;
+import com.tinqinacademy.comments.api.operations.deleteComments.DeleteComments;
 import com.tinqinacademy.comments.api.operations.deleteComments.DeleteCommentsInput;
-import com.tinqinacademy.comments.api.operations.deleteComments.DeleteCommentsOutput;
+import com.tinqinacademy.comments.api.operations.editCommentByAdmin.EditCommentsByAdmin;
 import com.tinqinacademy.comments.api.operations.editCommentByAdmin.EditCommentsByAdminInput;
-import com.tinqinacademy.comments.api.operations.editCommentByAdmin.EditCommentsByAdminOutput;
-import com.tinqinacademy.comments.core.processors.DeleteCommentsProcessor;
-import com.tinqinacademy.comments.core.processors.EditCommentsByAdminProcessor;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
@@ -14,10 +13,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class SystemCommentsController extends BaseController {
-    private final DeleteCommentsProcessor deleteCommentsProcessor;
-    private final EditCommentsByAdminProcessor editCommentsByAdminProcessor;
+    private final DeleteComments deleteCommentsProcessor;
+    private final EditCommentsByAdmin editCommentsByAdminProcessor;
 
-    public SystemCommentsController(DeleteCommentsProcessor deleteCommentsProcessor, EditCommentsByAdminProcessor editCommentsByAdminProcessor) {
+    public SystemCommentsController(DeleteComments deleteCommentsProcessor, EditCommentsByAdmin editCommentsByAdminProcessor) {
         this.deleteCommentsProcessor = deleteCommentsProcessor;
         this.editCommentsByAdminProcessor = editCommentsByAdminProcessor;
     }

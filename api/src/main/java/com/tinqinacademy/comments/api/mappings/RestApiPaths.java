@@ -1,4 +1,4 @@
-package com.tinqinacademy.comments.rest.controller;
+package com.tinqinacademy.comments.api.mappings;
 
 public class RestApiPaths {
     private static final String repeatedPart = "comment";

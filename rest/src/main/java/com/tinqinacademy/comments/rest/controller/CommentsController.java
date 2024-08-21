@@ -1,11 +1,12 @@
 package com.tinqinacademy.comments.rest.controller;
 
+import com.tinqinacademy.comments.api.mappings.RestApiPaths;
+import com.tinqinacademy.comments.api.operations.commentsGetListOfAllComments.GetListOfAllComments;
 import com.tinqinacademy.comments.api.operations.commentsGetListOfAllComments.GetListOfAllCommentsInput;
 import com.tinqinacademy.comments.api.operations.editOwnComment.EditOwnCommentInput;
+import com.tinqinacademy.comments.api.operations.editOwnComment.EditOwnComments;
+import com.tinqinacademy.comments.api.operations.leaveAComment.LeaveAComment;
 import com.tinqinacademy.comments.api.operations.leaveAComment.LeaveACommentInput;
-import com.tinqinacademy.comments.core.processors.EditOwnCommentsProcessor;
-import com.tinqinacademy.comments.core.processors.GetListOfAllCommentsProcessor;
-import com.tinqinacademy.comments.core.processors.LeaveACommentProcessor;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +15,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class CommentsController extends BaseController {
 
-    private final LeaveACommentProcessor leaveACommentProcessor;
-    private final GetListOfAllCommentsProcessor getListOfAllCommentsProcessor;
-    private final EditOwnCommentsProcessor editOwnCommentsProcessor;
+    private final LeaveAComment leaveACommentProcessor;
+    private final GetListOfAllComments getListOfAllCommentsProcessor;
+    private final EditOwnComments editOwnCommentsProcessor;
 
-    public CommentsController(LeaveACommentProcessor leaveACommentProcessor, GetListOfAllCommentsProcessor getListOfAllCommentsProcessor, EditOwnCommentsProcessor editOwnCommentsProcessor) {
+    public CommentsController(LeaveAComment leaveACommentProcessor, GetListOfAllComments getListOfAllCommentsProcessor, EditOwnComments editOwnCommentsProcessor) {
         this.leaveACommentProcessor = leaveACommentProcessor;
         this.getListOfAllCommentsProcessor = getListOfAllCommentsProcessor;
         this.editOwnCommentsProcessor = editOwnCommentsProcessor;
